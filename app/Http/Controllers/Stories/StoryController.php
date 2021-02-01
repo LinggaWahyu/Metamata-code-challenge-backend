@@ -67,6 +67,6 @@ class StoryController extends Controller
         ]);
         $story->save();
 
-        return redirect()->route('home');
+        return redirect()->back();
     }
 }

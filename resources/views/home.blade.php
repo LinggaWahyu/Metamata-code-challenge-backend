@@ -64,6 +64,7 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Story</th>
+                                <th scope="col">Posted At</th>
                                 <th scope="col">Total Like</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -80,6 +81,7 @@
                                 <tr>
                                     <td scope="row">{{ $story->user->name }}</td>
                                     <td>{{ $story->title }}</td>
+                                    <td>{{ date_format($story->created_at, "d F Y, H:i") }}</td>
                                     <td>
                                         <i class="fa fa-thumbs-up"> {{ number_format($story->total_like) }}
                                     </td>

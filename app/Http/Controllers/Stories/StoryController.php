@@ -13,7 +13,7 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $stories = Story::all();
+        $stories = Story::latest()->get();
 
         return view('home', [
             'stories' => $stories
@@ -51,7 +51,7 @@ class StoryController extends Controller
     public function my_stories()
     {
         $user = Auth::user();
-        $stories = Story::all()->where('user_id', $user->id);
+        $stories = Story::where('user_id', $user->id)->latest()->get();
 
         return view('home', [
             'stories' => $stories

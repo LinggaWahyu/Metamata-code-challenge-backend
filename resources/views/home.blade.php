@@ -69,6 +69,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if (count($stories) == 0)
+                                <tr>
+                                    <td class="text-center" colspan="4">
+                                        No one user posted the story here
+                                    <td/>
+                                </tr>
+                            @endif
                             @foreach ($stories as $story)
                                 <tr>
                                     <td scope="row">{{ $story->user->name }}</td>

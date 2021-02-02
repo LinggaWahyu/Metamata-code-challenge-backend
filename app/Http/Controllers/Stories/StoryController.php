@@ -66,7 +66,8 @@ class StoryController extends Controller
             'total_like' => $story->total_like + 1
         ]);
         $story->save();
-
+        
+        toastr()->success('Liked !');
         return redirect()->back();
     }
 }
